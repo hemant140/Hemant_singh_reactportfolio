@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-scroll";
+
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 
 
@@ -27,9 +27,9 @@ const Home = () => {
                         cursorColor="#ff014f"
                     /></h2>
                     <div>
-                        <Link to="https://www.linkedin.com/in/hemant-singh-646826227/" target="_blank" > <button className="text-white font-bold bg-teal-500  w-fit px-6 py-3 my-2 rounded-md max-sm:px-3 max-sm:py-2 hover:scale-110 duration-300">
+                        <a href="https://www.linkedin.com/in/hemant-singh-646826227/" target="_blank" rel='noreferrer' > <button className="text-white font-bold bg-teal-500  w-fit px-6 py-3 my-2 rounded-md max-sm:px-3 max-sm:py-2 hover:scale-110 duration-300">
                             Hire me
-                        </button></Link>
+                        </button></a>
 
                     </div>
                 </div>
