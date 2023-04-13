@@ -7,13 +7,13 @@ const Eduction = () => {
             <div className='w-full flex gap-20 justify-evenly px-24 max-[950px]:flex-col'>
                 <div>
                     <div className="py-6 font-titleFont flex flex-col ">
-                        <h2 className="text-3xl md:text-4xl font-bold ">Education Quality</h2>
-                        <p className="text-sm text-hemant tracking-[4px]">1998 - 2010</p>
+                        <h2 className="text-3xl md:text-4xl font-bold ">Education </h2>
+                        <p className="text-sm text-hemant tracking-[4px]">2015 - 2022</p>
                     </div>
                     <div className="mt-6 w-full h-auto border-l-[6px] border-l-gray-500 border-opacity-30 flex flex-col">
                         <EducationCard
                             title="B.Tech (Computer Science & Engineering)"
-                            subTitle="Veer Bahadur Singh Purvanchal University Jaunpur(2018 - 2012)"
+                            subTitle="Veer Bahadur Singh Purvanchal University Jaunpur(2018 - 2022)"
                             result="Percentage: 72%"
 
                         />
@@ -36,8 +36,8 @@ const Eduction = () => {
                 <div>
                     <div className="py-6  font-titleFont flex flex-col">
 
-                        <h2 className="text-3xl md:text-4xl font-bold ">Job Experience</h2>
-                        <p className="text-sm text-hemant tracking-[4px]">2010 - 2022</p>
+                        <h2 className="text-3xl md:text-4xl font-bold ">Experience</h2>
+                        <p className="text-sm text-hemant tracking-[4px]">Sept-2022 - Present</p>
                     </div>
                     <div className="mt-6 w-full h-auto border-l-[6px] border-l-gray-500 border-opacity-30 flex flex-col ">
                         <EducationCard
