@@ -11,7 +11,7 @@ const About = () => {
                 </div>
 
                 <div className='flex justify-center'>
-                    <div className=" hidden md:flex bg-gradient-to-b from-teal-500  to-gray-600 rounded-full w-72 h-72 mt-20 ml-10 mr-14  max-lg:w-64 max-lg:h-64 max-md:w-52 max-md:h-52">
+                    <div className=" hidden md:flex bg-gradient-to-b from-teal-500  to-gray-600 rounded-full w-72 h-72 mt-32 ml-4 mr-16  max-lg:w-64 max-lg:h-64 max-md:w-52 max-md:h-52">
                         <img src="images/pic.png" alt="Avtar" className="mx-auto w-2/3 md:w-80 max-md:w-52
                     " />
                     </div>
