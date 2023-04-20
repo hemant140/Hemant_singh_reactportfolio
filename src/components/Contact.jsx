@@ -22,7 +22,7 @@ const Contact = () => {
             <label htmlFor="" className='mt-4 font-bold'>Email</label>
             <input
               type="email"
-              name='name'
+              name='email'
               placeholder='Enter your email'
               className=' p-2 bg-transparent border-2 rounded-md text-white focus:outline-none'
             />
