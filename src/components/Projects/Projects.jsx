@@ -14,6 +14,13 @@ const Projects = () => {
 
         <div className='grid grid-cols-3 gap-14 max-sm:grid-cols-1 max-lg:grid-cols-2'>
           <Projectscard
+            title="MoviesFlix "
+            des="I built an attractive moviesflix site using TMBD APIs in ReactJS. With a strong emphasis on user experience, I implemented all necessary features to showcase my proficiency in front-end development."
+            src="images/movies.png"
+            href="https://github.com/hemant140/MoviesFlixReact"
+            showGlobeLink // new prop to conditionally render the GitHub link
+          />
+          <Projectscard
             title="MALWARE DETECTION USING ML"
             des="Built a malware detection system using Python libraries and machine learning algorithms to detect and differentiate between malicious and legitimate files, enhancing the security of the system."
             src="images/malware.jpg"
@@ -31,6 +38,7 @@ const Projects = () => {
             src="images/bmi.jpg"
             href="https://github.com/hemant140/Bmi-Calculater-App"
           />
+
 
 
         </div>
