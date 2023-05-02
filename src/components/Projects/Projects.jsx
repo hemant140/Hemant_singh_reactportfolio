@@ -38,6 +38,13 @@ const Projects = () => {
             src="images/bmi.jpg"
             href="https://github.com/hemant140/Bmi-Calculater-App"
           />
+          <Projectscard
+            title="BookStore"
+            des="Built online bookstore using HTML, CSS, and JavaScript, demonstrating front-end web dev skills.Created responsive,user-friendly bookstore site with HTML,CSS and JS,showcasing modern web dev proficiency."
+            src="images/bookstore.png"
+            href="https://github.com/hemant140/MoviesFlixReact"
+            showBookLink // new prop to conditionally render the GitHub link
+          />
 
 
 
