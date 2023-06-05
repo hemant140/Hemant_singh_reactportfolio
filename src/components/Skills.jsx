@@ -23,58 +23,63 @@ const Skills = () => {
             title: 'JavaScript',
             style: 'shadow-yellow-500'
         },
-
         {
             id: 4,
+            src: 'images/next.png',
+            title: 'NextJS',
+            style: 'shadow-sky-700'
+        },
+        {
+            id: 5,
             src: 'images/react.png',
             title: 'React',
             style: 'shadow-sky-400'
         },
         {
-            id: 5,
+            id: 6,
             src: 'images/c_programming.png',
             title: 'C++',
             style: 'shadow-sky-700'
         },
         {
-            id: 6,
+            id: 7,
             src: 'images/angular.png',
             title: 'Angular',
             style: 'shadow-red-500'
         },
         {
-            id: 7,
+            id: 8,
             src: 'images/mongodb.png',
             title: 'MongoDb',
             style: 'shadow-lime-400'
         },
         {
-            id: 8,
+            id: 9,
             src: 'images/flutter.png',
             title: 'Flutter',
             style: 'shadow-sky-300'
         },
         {
-            id: 9,
+            id: 10,
             src: 'images/firebase.png',
             title: 'Firebase',
             style: 'shadow-yellow-500'
         },
 
         {
-            id: 10,
+            id: 11,
             src: 'images/mysql.png',
             title: 'SQL',
             style: 'shadow-blue-500'
         },
         {
-            id: 11,
+            id: 12,
             src: 'images/python.png',
             title: 'Python',
             style: 'shadow-yellow-300'
         },
         {
-            id: 12,
+            id: 13,
             src: 'images/githubs.png',
             title: 'Github',
             style: 'shadow-gray-500'
