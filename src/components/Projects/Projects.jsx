@@ -14,6 +14,20 @@ const Projects = () => {
 
         <div className='grid grid-cols-3 gap-14 max-sm:grid-cols-1 max-lg:grid-cols-2'>
           <Projectscard
+            title="Esim Source "
+            des="As a junior software developer at Virtuzo Infosystems Pvt Ltd, I contributed to projects built with React, Redux, MySQL.I played a key role in designing, implementing, and maintaining these projects."
+            src="images/sim.jpg"
+            // href="https://github.com/hemant140/MoviesFlixReact"
+            showEsimSouceLink // new prop to conditionally render the GitHub link
+          />
+          <Projectscard
+            title="AHBRANDS APP"
+            des="Contributing to the AHBRANDS project, an e-commerce app developed using Ionic Angular, which involves building and designing a user-friendly interface for online shopping and utilizing PHP APIs."
+            src="images/ah2.jpg"
+            // href="https://github.com/hemant140/MoviesFlixReact"
+            showahbrndsLink // new prop to conditionally render the GitHub link
+          />
+          <Projectscard
             title="MoviesFlix "
             des="I built an attractive moviesflix site using TMBD APIs in ReactJS. With a strong emphasis on user experience, I implemented all necessary features to showcase my proficiency in front-end development."
             src="images/movies.png"
