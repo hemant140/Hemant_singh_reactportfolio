@@ -41,17 +41,17 @@ const Eduction = () => {
                     </div>
                     <div className="mt-6 w-full h-auto border-l-[6px] border-l-gray-500 border-opacity-30 flex flex-col ">
                         <EducationCard
-                            title="Junior Software Developer"
-                            subTitle="Virtuzo Infosystem Pvt. Ltd. - (jun-2023 - Present)"
+                            title="Software Developer"
+                            subTitle="Virtuzo Infosystem Pvt. Ltd. - (feb-2023 - Present)"
                             result="Noida"
 
                         />
-                        <EducationCard
+                        {/* <EducationCard
                             title="Software Developer Intern"
                             subTitle="Virtuzo Infosystem Pvt. Ltd. - (feb-2023 - jun-2023)"
                             result="Noida"
 
-                        />
+                        /> */}
                         <EducationCard
                             title="Full Stack Developer Trainee"
                             subTitle="Ducat Training School- (sept-2022 - feb-2023)"
@@ -62,7 +62,7 @@ const Eduction = () => {
                     </div>
                 </div>
 
-                
+
             </div>
         </div>
     )
