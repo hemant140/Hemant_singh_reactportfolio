@@ -53,7 +53,7 @@ const Eduction = () => {
 
                         /> */}
                         <EducationCard
-                            title="Full Stack Developer Trainee"
+                            title="Software Developer Intern"
                             subTitle="Ducat Training School- (sept-2022 - feb-2023)"
                             result="Noida"
 
