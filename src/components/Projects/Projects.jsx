@@ -21,6 +21,25 @@ const Projects = () => {
             showEsimSouceLink // new prop to conditionally render the GitHub link
           />
           <Projectscard
+            title="Esim Trav "
+            des="Seamlessly integrated Redux to optimize data flow, engineering responsive
+                  userinterfaces. Played a pivotalrole in optimizing platform scalability,
+                  responsiveness, and user-friendly during my tenure at Virtuzo Infosystems Pvt.
+                  Ltd."
+            src="images/esim Trav.png"
+            projectLink={true}
+            projectUrl="http://esimtrav.sirrat.com/"
+          // href="https://github.com/hemant140/MoviesFlixReact"
+          />
+          <Projectscard
+            title="ENK Wireless"
+            des="ENK Wireless Portal simplifies eSIM activation with React, Node.js, and MySQL, ensuring efficiency, reliability, and security. Powered by a sleek React frontend and a swift Node.js backend, it automates tasks, reduces errors, and accelerates the process."
+            src="images/enk-wireless.png"
+            projectLink={true}
+            projectUrl="https://activate.enkwirelessinc.com/"
+          // href="https://github.com/hemant140/MoviesFlixReact"
+          />
+          <Projectscard
             title="AHBRANDS APP"
             des="Contributing to the AHBRANDS project, an e-commerce app developed using Ionic Angular, which involves building and designing a user-friendly interface for online shopping and utilizing PHP APIs."
             src="images/ah2.jpg"
