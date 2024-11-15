@@ -23,7 +23,7 @@ const About = () => {
                             <br /> <span className='text-lg text-gray-500 max-lg:text-lg max-md:text-lg max-[390px]:text-lg'> Thanks You!</span>
                         </p>
                         <div>
-                            <a href="Hemant_Singh_Resume_Software_Developer.pdf" target='_blank' ><button className="text-white font-bold bg-teal-500 w-fit px-4 py-2 my-2 rounded-md max-sm:px-3 max-sm:py-2 hover:scale-110 duration-300 cursor-pointer">
+                            <a href="Hemant_Singh_Resume_Software_Engineer(3).pdf" target='_blank' ><button className="text-white font-bold bg-teal-500 w-fit px-4 py-2 my-2 rounded-md max-sm:px-3 max-sm:py-2 hover:scale-110 duration-300 cursor-pointer">
                                 Resume
                             </button></a>
                         </div>
