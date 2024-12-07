@@ -16,8 +16,6 @@ const Home = () => {
     return (
         <div name="home" className="h-screen w-full bg-gradient-to-b from-black to-gray-800">
             <div className="max-w-screen-lg mx-auto flex  items-center justify-center h-full px-4 md:flex-row max-sm:justify-center">
-
-
                 <div className="flex flex-col justify-center h-full">
                     <h2 className="text_name  font-bold text-white">Hello ,I'm </h2>
                     <p className="text-hemant text-7xl font-bold max-md:text-5xl max-lg:6xl max-sm:text-6xl">Hemant Singh</p>

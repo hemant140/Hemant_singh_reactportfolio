@@ -21,11 +21,6 @@ function App() {
       <Skills />
       <Projects />
       <Contact />
-      
-
-
-
-
       <Sociallinks />
 
     </div>
