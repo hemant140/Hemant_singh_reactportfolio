@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react";
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { HiOutlineSun, HiOutlineMoon } from 'react-icons/hi';
 import { Link } from "react-scroll";
+import useTheme from '../hooks/useTheme';
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [theme, toggleTheme] = useTheme();
 
   useEffect(() => {
     const onScroll = () => {
@@ -57,7 +60,12 @@ const Navbar = () => {
               </Link>
             </li>
           ))}
-          <li className="ml-3">
+          <li className="ml-2">
+            <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
+              {theme === 'light' ? <HiOutlineMoon size={17} /> : <HiOutlineSun size={18} />}
+            </button>
+          </li>
+          <li className="ml-1">
             <a href="Hemant_Singh_Software_Engineer.pdf" target="_blank" rel="noopener noreferrer">
               <button className="btn-primary text-sm py-2 px-5 rounded-lg"><span>Resume ↗</span></button>
             </a>
@@ -86,10 +94,20 @@ const Navbar = () => {
                 </Link>
               </li>
             ))}
-            <li className="mt-4">
+            <li className="mt-4 flex flex-col items-center gap-3">
               <a href="Hemant_Singh_Software_Engineer.pdf" target="_blank" rel="noopener noreferrer">
                 <button className="btn-primary text-base"><span>Download Resume</span></button>
               </a>
+              <button
+                className="theme-toggle w-auto px-5 gap-2 flex items-center"
+                onClick={toggleTheme}
+                aria-label="Toggle theme"
+              >
+                {theme === 'light' ? <HiOutlineMoon size={16} /> : <HiOutlineSun size={16} />}
+                <span className="font-Outfit text-sm font-semibold">
+                  {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
+                </span>
+              </button>
             </li>
           </ul>
         </div>

@@ -65,6 +65,11 @@ const Home = () => {
       className="relative min-h-screen w-full overflow-hidden flex items-center pt-[72px]"
       style={{ background: 'var(--bg)' }}
     >
+      {/* Animated gradient mesh */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="gradient-mesh" />
+      </div>
+
       {/* Floating tech universe */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {BG_ICONS.map(({ C, color, top, left, s, dur, dl, op }, i) => (
@@ -133,9 +138,9 @@ const Home = () => {
           >
             {[
               { num: "3.5+", label: "Years Exp" },
-              { num: "20+",  label: "APIs Shipped" },
-              { num: "10+",  label: "SaaS Modules" },
+              { num: "12+",  label: "Live Projects" },
               { num: "5+",   label: "Companies" },
+              { num: "4",    label: "Tech Domains" },
             ].map(({ num, label }) => (
               <div key={label}>
                 <p className="gradient-text font-Orbitron font-black text-2xl">{num}</p>
@@ -145,11 +150,13 @@ const Home = () => {
           </div>
         </div>
 
-        {/* RIGHT — Stacked tilted card photo */}
+        {/* RIGHT — Photo + code snippet */}
         <div
-          className="flex-shrink-0 relative flex items-center justify-center animate-fade-right"
-          style={{ animationDelay: '0.4s', width: 320, height: 420 }}
+          className="flex-shrink-0 flex flex-col items-center gap-4 animate-fade-right"
+          style={{ animationDelay: '0.4s', width: 320 }}
         >
+        {/* Photo stack */}
+        <div className="relative" style={{ width: 320, height: 420 }}>
           {/* Background decorative card 1 — farthest back, most tilted */}
           <div
             className="absolute rounded-3xl"
@@ -221,7 +228,32 @@ const Home = () => {
           <div style={{ position: 'absolute', top: 10, right: 10, width: 10, height: 10, borderRadius: '50%', background: 'var(--primary)', boxShadow: '0 0 10px rgba(37,99,235,0.6)', animation: 'blink 2s ease-in-out infinite', zIndex: 3 }} />
           <div style={{ position: 'absolute', bottom: 14, left: 14, width: 8, height: 8, borderRadius: '50%', background: 'var(--green)', boxShadow: '0 0 8px rgba(16,185,129,0.6)', animation: 'blink 2s ease-in-out infinite', animationDelay: '0.8s', zIndex: 3 }} />
         </div>
-      </div>
+
+          {/* Floating code snippet card — desktop only */}
+          <div className="w-full hidden lg:block code-card animate-fade-up" style={{ animationDelay: '1s' }}>
+            {/* Terminal dots header */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: 5, marginBottom: 10, paddingBottom: 8, borderBottom: '1px solid var(--border)' }}>
+              <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#ff5f57', display: 'inline-block' }} />
+              <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#febc2e', display: 'inline-block' }} />
+              <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#28c840', display: 'inline-block' }} />
+              <span style={{ marginLeft: 6, fontFamily: 'Orbitron', fontSize: 9, color: 'var(--text-dim)', letterSpacing: '0.1em' }}>engineer.ts</span>
+            </div>
+            {/* Code lines */}
+            <div style={{ color: 'var(--text-dim)' }}>
+              <div><span style={{ color: '#7c3aed' }}>const </span><span style={{ color: 'var(--primary)' }}>hemant </span><span>= {'{'}</span></div>
+              <div style={{ paddingLeft: 14 }}><span>role: </span><span style={{ color: '#f59e0b' }}>'Sr. Software Engineer'</span><span>,</span></div>
+              <div style={{ paddingLeft: 14 }}><span>stack: </span><span style={{ color: '#10b981' }}>['NestJS', 'AWS', 'TS']</span><span>,</span></div>
+              <div style={{ paddingLeft: 14 }}><span>mtech: </span><span style={{ color: 'var(--primary)' }}>'AI/ML @ BITS Pilani'</span><span>,</span></div>
+              <div style={{ paddingLeft: 14 }}>
+                <span>available: </span><span style={{ color: '#10b981' }}>true</span>
+                <span className="code-cursor" />
+              </div>
+              <div><span>{'}'}</span></div>
+            </div>
+          </div>
+
+        </div>{/* end right column */}
+      </div>{/* end content grid */}
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10 animate-float">

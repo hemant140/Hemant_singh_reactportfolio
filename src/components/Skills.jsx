@@ -130,8 +130,27 @@ const MicroserviceGraph = () => {
   );
 };
 
+const EXPERTISE = [
+  { label: 'Backend APIs — NestJS · Node.js · Express', pct: 95, color: '#2563eb' },
+  { label: 'TypeScript · JavaScript Architecture',       pct: 93, color: '#3178c6' },
+  { label: 'Databases — PostgreSQL · MongoDB · Redis',  pct: 88, color: '#10b981' },
+  { label: 'Cloud & DevOps — AWS · Docker · CI/CD',     pct: 84, color: '#f59e0b' },
+  { label: 'Frontend — React · Angular · Tailwind CSS', pct: 77, color: '#7c3aed' },
+];
+
+const ProficiencyBar = ({ label, pct, color, inView, delay }) => (
+  <div className="proficiency-row">
+    <span className="proficiency-label">{label}</span>
+    <div className="proficiency-track">
+      <div className="proficiency-fill" style={{ width: inView ? `${pct}%` : '0%', background: color, transitionDelay: delay }} />
+    </div>
+    <span className="proficiency-pct" style={{ color }}>{pct}%</span>
+  </div>
+);
+
 const Skills = () => {
   const [sectionRef, inView] = useInView();
+  const [barsRef, barsInView] = useInView();
 
   return (
     <div name="skills" className="relative w-full min-h-screen cosmic-bg py-28 overflow-hidden">
@@ -185,6 +204,27 @@ const Skills = () => {
             <span style={{ color: 'var(--primary)', fontSize: 12 }}>→</span>
           </div>
           <MarqueeRow items={ROW3} direction="left" speed="28s" />
+        </div>
+
+        {/* Proficiency Bars */}
+        <div
+          ref={barsRef}
+          className={`mt-16 glass-card-new rounded-2xl p-8 reveal-hidden ${barsInView ? 'revealed' : ''}`}
+        >
+          <p className="section-label mb-2">Proficiency</p>
+          <h3 className="font-Outfit font-black text-2xl mb-8" style={{ color: 'var(--text)' }}>
+            Core <span className="gradient-text">Expertise Levels</span>
+          </h3>
+          {EXPERTISE.map(({ label, pct, color }, i) => (
+            <ProficiencyBar
+              key={label}
+              label={label}
+              pct={pct}
+              color={color}
+              inView={barsInView}
+              delay={`${i * 0.15}s`}
+            />
+          ))}
         </div>
 
         {/* Divider */}

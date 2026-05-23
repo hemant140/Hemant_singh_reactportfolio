@@ -44,7 +44,7 @@ const About = () => {
               {/* Photo */}
               <div className="relative w-full h-full rounded-[1.75rem] overflow-hidden"
                    style={{ border: '1px solid var(--border)', background: 'var(--bg-card)' }}>
-                <img src="images/pic.png" alt="Hemant Singh" className="w-full h-full object-cover object-top" />
+                <img src="hemant%20img.JPG" alt="Hemant Singh" className="w-full h-full object-cover object-top" />
                 <div className="absolute inset-0 pointer-events-none"
                      style={{ background: 'linear-gradient(to top, rgba(15,23,42,0.25), transparent 60%)' }} />
               </div>
@@ -101,10 +101,10 @@ const About = () => {
 
             {/* Stats */}
             <div className={`grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 reveal-hidden stagger-3 ${inView ? 'revealed' : ''}`}>
-              <StatCard num="3" suffix=".5+" label="Years Exp"          inView={inView} delay="0.1s" />
-              <StatCard num="20" suffix="+"  label="APIs Built"          inView={inView} delay="0.2s" />
-              <StatCard num="10" suffix="+"  label="SaaS Microservices"  inView={inView} delay="0.3s" />
-              <StatCard num="5"  suffix="+"  label="Companies"           inView={inView} delay="0.4s" />
+              <StatCard num="3" suffix=".5+" label="Years Exp"       inView={inView} delay="0.1s" />
+              <StatCard num="5"  suffix="+"  label="Companies"       inView={inView} delay="0.2s" />
+              <StatCard num="12" suffix="+"  label="Live Projects"   inView={inView} delay="0.3s" />
+              <StatCard num="4"  suffix=""   label="Tech Domains"    inView={inView} delay="0.4s" />
             </div>
 
             {/* Tags */}
