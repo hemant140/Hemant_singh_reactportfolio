@@ -28,7 +28,7 @@
     border: 2px solid #090d16;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #ff014f;
+    background: #06b6d4;
   }
 }
 
@@ -45,16 +45,16 @@
 }
 
 .text-hemant {
-  color: #ff014f;
+  color: #06b6d4;
 }
 
 .bg-lightpink {
-  background-color: #ff014f;
+  background-color: #06b6d4;
 }
 
 .bg-lightpink:hover {
-  background-color: #e00045;
-  box-shadow: 0 0 15px rgba(255, 1, 79, 0.4);
+  background-color: #0891b2;
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.3);
 }
 
 .background {
@@ -72,23 +72,23 @@
 }
 
 .glass-card:hover {
-  border-color: rgba(255, 1, 79, 0.2);
-  box-shadow: 0 12px 40px 0 rgba(255, 1, 79, 0.1);
+  border-color: rgba(6, 182, 212, 0.2);
+  box-shadow: 0 12px 40px 0 rgba(6, 182, 212, 0.05);
   transform: translateY(-4px);
 }
 
 /* Floating Node glow */
 .glow-node {
-  box-shadow: 0 0 10px rgba(255, 1, 79, 0.5);
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.4);
   animation: pulse-glow 2s infinite alternate;
 }
 
 @keyframes pulse-glow {
   0% {
-    box-shadow: 0 0 8px rgba(255, 1, 79, 0.4);
+    box-shadow: 0 0 6px rgba(6, 182, 212, 0.3);
   }
   100% {
-    box-shadow: 0 0 16px rgba(255, 1, 79, 0.8);
+    box-shadow: 0 0 12px rgba(6, 182, 212, 0.6);
   }
 }
 
@@ -110,7 +110,7 @@
 
 /* Premium Glow Underlines for Active Tabs */
 .active-tab-glow {
-  box-shadow: 0 0 15px rgba(255, 1, 79, 0.6);
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.4);
 }
 
 

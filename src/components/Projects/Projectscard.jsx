@@ -4,7 +4,7 @@ import { FaGlobe } from "react-icons/fa";
 
 const Projectscard = ({ title, des, src, href, showGlobeLink, showBookLink, showEsimSouceLink, showahbrndsLink, projectLink, projectUrl, tech }) => {
     return (
-        <div className="w-full p-5 rounded-xl glass-card border border-slate-800/80 bg-slate-900/30 backdrop-blur-md hover:border-[#ff014f]/30 duration-300 flex flex-col justify-between group">
+        <div className="w-full p-5 rounded-xl glass-card border border-slate-800/80 bg-slate-900/30 backdrop-blur-md hover:border-cyan-500/30 duration-300 flex flex-col justify-between group">
             <div>
                 {/* Image Frame */}
                 <div className="w-full h-48 overflow-hidden rounded-lg border border-slate-850 bg-slate-950 relative">
@@ -19,14 +19,14 @@ const Projectscard = ({ title, des, src, href, showGlobeLink, showBookLink, show
                 {/* Details */}
                 <div className="w-full mt-5 flex flex-col gap-4">
                     <div className="flex items-center justify-between">
-                        <h3 className="text-lg font-bold font-Outfit text-[#ff014f] group-hover:text-white duration-300 tracking-wide uppercase">
+                        <h3 className="text-lg font-bold font-Outfit text-cyan-450 group-hover:text-white duration-300 tracking-wide uppercase">
                             {title}
                         </h3>
                         
                         <div className="flex gap-2">
                             {href && (
                                 <a href={href} target='_blank' rel="noopener noreferrer">
-                                    <span className="text-base w-9 h-9 rounded-full bg-slate-950 hover:bg-[#ff014f] border border-slate-800 hover:border-[#ff014f] inline-flex justify-center items-center text-slate-300 hover:text-white duration-300 cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.4)]">
+                                    <span className="text-base w-9 h-9 rounded-full bg-slate-950 hover:bg-cyan-500 border border-slate-800 hover:border-cyan-500 inline-flex justify-center items-center text-slate-300 hover:text-white duration-300 cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.4)]">
                                         <BsGithub />
                                     </span>
                                 </a>
@@ -34,7 +34,7 @@ const Projectscard = ({ title, des, src, href, showGlobeLink, showBookLink, show
 
                             {projectLink && (
                                 <a href={projectUrl} target='_blank' rel="noopener noreferrer">
-                                    <span className="text-base w-9 h-9 rounded-full bg-slate-950 hover:bg-[#ff014f] border border-slate-800 hover:border-[#ff014f] inline-flex justify-center items-center text-slate-300 hover:text-white duration-300 cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.4)]">
+                                    <span className="text-base w-9 h-9 rounded-full bg-slate-950 hover:bg-cyan-500 border border-slate-800 hover:border-cyan-500 inline-flex justify-center items-center text-slate-300 hover:text-white duration-300 cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.4)]">
                                         <FaGlobe />
                                     </span>
                                 </a>
@@ -42,7 +42,7 @@ const Projectscard = ({ title, des, src, href, showGlobeLink, showBookLink, show
                             
                             {showGlobeLink && (
                                 <a href="https://hemantmoviesflix.netlify.app/" target='_blank' rel="noopener noreferrer">
-                                    <span className="text-base w-9 h-9 rounded-full bg-slate-950 hover:bg-[#ff014f] border border-slate-800 hover:border-[#ff014f] inline-flex justify-center items-center text-slate-300 hover:text-white duration-300 cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.4)]">
+                                    <span className="text-base w-9 h-9 rounded-full bg-slate-950 hover:bg-cyan-500 border border-slate-800 hover:border-cyan-500 inline-flex justify-center items-center text-slate-300 hover:text-white duration-300 cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.4)]">
                                         <FaGlobe />
                                     </span>
                                 </a>
@@ -50,7 +50,7 @@ const Projectscard = ({ title, des, src, href, showGlobeLink, showBookLink, show
                             
                             {showBookLink && (
                                 <a href="https://hemantbooksite.netlify.app/" target='_blank' rel="noopener noreferrer">
-                                    <span className="text-base w-9 h-9 rounded-full bg-slate-950 hover:bg-[#ff014f] border border-slate-800 hover:border-[#ff014f] inline-flex justify-center items-center text-slate-300 hover:text-white duration-300 cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.4)]">
+                                    <span className="text-base w-9 h-9 rounded-full bg-slate-950 hover:bg-cyan-500 border border-slate-800 hover:border-cyan-500 inline-flex justify-center items-center text-slate-300 hover:text-white duration-300 cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.4)]">
                                         <FaGlobe />
                                     </span>
                                 </a>
@@ -58,7 +58,7 @@ const Projectscard = ({ title, des, src, href, showGlobeLink, showBookLink, show
                             
                             {showEsimSouceLink && (
                                 <a href="https://esimsource.com" target='_blank' rel="noopener noreferrer">
-                                    <span className="text-base w-9 h-9 rounded-full bg-slate-950 hover:bg-[#ff014f] border border-slate-800 hover:border-[#ff014f] inline-flex justify-center items-center text-slate-300 hover:text-white duration-300 cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.4)]">
+                                    <span className="text-base w-9 h-9 rounded-full bg-slate-950 hover:bg-cyan-500 border border-slate-800 hover:border-cyan-500 inline-flex justify-center items-center text-slate-300 hover:text-white duration-300 cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.4)]">
                                         <FaGlobe />
                                     </span>
                                 </a>
@@ -66,7 +66,7 @@ const Projectscard = ({ title, des, src, href, showGlobeLink, showBookLink, show
                             
                             {showahbrndsLink && (
                                 <a href="https://play.google.com/store/apps/details?id=com.ahbrands.app" target='_blank' rel="noopener noreferrer">
-                                    <span className="text-base w-9 h-9 rounded-full bg-slate-950 hover:bg-[#ff014f] border border-slate-800 hover:border-[#ff014f] inline-flex justify-center items-center text-slate-300 hover:text-white duration-300 cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.4)]">
+                                    <span className="text-base w-9 h-9 rounded-full bg-slate-950 hover:bg-cyan-500 border border-slate-800 hover:border-cyan-500 inline-flex justify-center items-center text-slate-300 hover:text-white duration-300 cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.4)]">
                                         <FaGlobe />
                                     </span>
                                 </a>

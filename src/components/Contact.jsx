@@ -7,7 +7,7 @@ const Contact = () => {
       
       <div className='flex flex-col p-6 justify-center max-w-screen-lg mx-auto w-full z-10'>
         <div className='pb-4'>
-          <h2 className='text-5xl font-extrabold font-Outfit inline border-b-4 border-[#ff014f] tracking-tight'>
+          <h2 className='text-5xl font-extrabold font-Outfit inline border-b-4 border-cyan-500 tracking-tight'>
             Contact
           </h2>
           <p className='py-6 text-slate-400 font-Outfit text-lg'>
@@ -30,7 +30,7 @@ const Contact = () => {
                   name='name'
                   placeholder='Enter your name'
                   required
-                  className='p-3 bg-slate-950/60 border border-slate-800 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-[#ff014f] focus:ring-1 focus:ring-[#ff014f] transition-all duration-300 font-Outfit'
+                  className='p-3 bg-slate-950/60 border border-slate-850 rounded-lg text-white placeholder-slate-550 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all duration-300 font-Outfit'
                 />
               </div>
               
@@ -42,7 +42,7 @@ const Contact = () => {
                   name='email'
                   placeholder='Enter your email'
                   required
-                  className='p-3 bg-slate-950/60 border border-slate-800 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-[#ff014f] focus:ring-1 focus:ring-[#ff014f] transition-all duration-300 font-Outfit'
+                  className='p-3 bg-slate-950/60 border border-slate-850 rounded-lg text-white placeholder-slate-550 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all duration-300 font-Outfit'
                 />
               </div>
               
@@ -54,11 +54,11 @@ const Contact = () => {
                   rows="6" 
                   placeholder='Enter your message'
                   required
-                  className='p-3 bg-slate-950/60 border border-slate-800 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-[#ff014f] focus:ring-1 focus:ring-[#ff014f] transition-all duration-300 font-Outfit resize-none'
+                  className='p-3 bg-slate-950/60 border border-slate-850 rounded-lg text-white placeholder-slate-550 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all duration-300 font-Outfit resize-none'
                 ></textarea>
               </div>
 
-              <button className='text-white bg-[#ff014f] hover:bg-[#e00045] font-bold px-8 py-3.5 mt-4 rounded-lg hover:scale-105 duration-300 font-Outfit tracking-wide shadow-[0_4px_15px_rgba(255,1,79,0.25)] hover:shadow-[0_4px_25px_rgba(255,1,79,0.45)] w-full transition-all'>
+              <button className='text-slate-950 bg-white hover:bg-slate-200 font-bold px-8 py-3.5 mt-4 rounded-lg hover:scale-[1.02] duration-300 font-Outfit tracking-wide w-full transition-all shadow-md cursor-pointer border border-white'>
                 Send Message
               </button>
             </form>

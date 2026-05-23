@@ -47,23 +47,23 @@ const Navbar = () => {
 
             <ul className="hidden md:flex items-center gap-2">
                 {links.map(({ id, link }) => (
-                    <li key={id} className="px-4 py-2 cursor-pointer capitalize font-semibold font-Outfit text-slate-300 hover:text-[#ff014f] transition-all duration-300 relative group">
-                        <Link to={link} smooth duration={500} offset={-80} spy={true} activeClass="text-[#ff014f]">
+                    <li key={id} className="px-4 py-2 cursor-pointer capitalize font-semibold font-Outfit text-slate-300 hover:text-cyan-400 transition-all duration-300 relative group">
+                        <Link to={link} smooth duration={500} offset={-80} spy={true} activeClass="text-cyan-400">
                             {link}
                         </Link>
-                        <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#ff014f] group-hover:w-full transition-all duration-300"></span>
+                        <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-cyan-500 group-hover:w-full transition-all duration-300"></span>
                     </li>
                 ))}
             </ul>
 
-            <div onClick={() => setNav(!nav)} className="cursor-pointer pr-2 z-50 text-slate-300 hover:text-[#ff014f] duration-300 md:hidden">
+            <div onClick={() => setNav(!nav)} className="cursor-pointer pr-2 z-50 text-slate-300 hover:text-cyan-400 duration-300 md:hidden">
                 {nav ? <FaTimes size={26} /> : <FaBars size={26} />}
             </div>
 
             {nav && (
                 <ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-slate-950/95 backdrop-blur-lg text-slate-300 transition-all duration-300">
                     {links.map(({ id, link }) => (
-                        <li key={id} className="px-4 cursor-pointer capitalize py-6 text-3xl font-semibold font-Outfit hover:text-[#ff014f] duration-300">
+                        <li key={id} className="px-4 cursor-pointer capitalize py-6 text-3xl font-semibold font-Outfit hover:text-cyan-400 duration-300">
                             <Link onClick={() => setNav(false)} to={link} smooth duration={500} offset={-80}>
                                 {link}
                             </Link>

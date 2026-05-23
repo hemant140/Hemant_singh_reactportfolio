@@ -126,7 +126,7 @@ const Projects = () => {
       
       <div className='flex flex-col p-6 justify-center max-w-screen-lg mx-auto w-full z-10'>
         <div className='pb-4 text-center md:text-left'>
-          <h2 className='text-5xl font-extrabold font-Outfit inline border-b-4 border-[#ff014f] tracking-tight'>
+          <h2 className='text-5xl font-extrabold font-Outfit inline border-b-4 border-cyan-500 tracking-tight'>
             Projects
           </h2>
           <p className='py-6 text-slate-400 font-Outfit text-lg'>
@@ -140,7 +140,7 @@ const Projects = () => {
             <button
               key={index}
               onClick={() => setActiveFilter(filter.value)}
-              className={`px-5 py-2.5 rounded-full font-Outfit font-bold text-sm transition-all duration-300 border cursor-pointer ${activeFilter === filter.value ? 'bg-[#ff014f] border-[#ff014f] text-white shadow-[0_4px_12px_rgba(255,1,79,0.25)] hover:bg-[#e00045]' : 'bg-slate-900/40 border-slate-800 text-slate-450 hover:text-white hover:border-slate-700'}`}
+              className={`px-5 py-2.5 rounded-full font-Outfit font-bold text-sm transition-all duration-300 border cursor-pointer ${activeFilter === filter.value ? 'bg-white border-white text-slate-950 shadow-md' : 'bg-slate-900/40 border-slate-850 text-slate-400 hover:text-white hover:border-slate-750'}`}
             >
               {filter.label}
             </button>

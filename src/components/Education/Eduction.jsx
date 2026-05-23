@@ -51,7 +51,7 @@ const Eduction = () => {
             
             <div className='w-full max-w-screen-lg mx-auto px-6 z-10 flex flex-col justify-center'>
                 <div className="pb-8 text-center md:text-left">
-                    <h2 className="text-5xl font-extrabold font-Outfit inline border-b-4 border-[#ff014f] tracking-tight">
+                    <h2 className="text-5xl font-extrabold font-Outfit inline border-b-4 border-cyan-500 tracking-tight">
                         Resume
                     </h2>
                     <p className="mt-4 text-slate-400 font-Outfit text-lg">
@@ -64,13 +64,13 @@ const Eduction = () => {
                     <div className="flex bg-slate-900/60 p-1.5 rounded-full border border-slate-800/80 backdrop-blur-md shadow-2xl max-w-md w-full">
                         <button 
                             onClick={() => setActiveTab('experience')}
-                            className={`flex-1 py-3.5 px-6 rounded-full font-Outfit font-bold text-sm md:text-base transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer ${activeTab === 'experience' ? 'bg-[#ff014f] text-white shadow-[0_4px_15px_rgba(255,1,79,0.3)]' : 'text-slate-400 hover:text-white'}`}
+                            className={`flex-1 py-3.5 px-6 rounded-full font-Outfit font-bold text-sm md:text-base transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer ${activeTab === 'experience' ? 'bg-white text-slate-950 shadow-md' : 'text-slate-400 hover:text-white'}`}
                         >
                             💼 Experience
                         </button>
                         <button 
                             onClick={() => setActiveTab('education')}
-                            className={`flex-1 py-3.5 px-6 rounded-full font-Outfit font-bold text-sm md:text-base transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer ${activeTab === 'education' ? 'bg-[#ff014f] text-white shadow-[0_4px_15px_rgba(255,1,79,0.3)]' : 'text-slate-400 hover:text-white'}`}
+                            className={`flex-1 py-3.5 px-6 rounded-full font-Outfit font-bold text-sm md:text-base transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer ${activeTab === 'education' ? 'bg-white text-slate-950 shadow-md' : 'text-slate-400 hover:text-white'}`}
                         >
                             🎓 Education
                         </button>
