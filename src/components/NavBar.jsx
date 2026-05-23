@@ -1,79 +1,101 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { Link } from "react-scroll";
 
-
 const Navbar = () => {
+  const [nav, setNav] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [progress, setProgress] = useState(0);
 
-    const [nav, setNav] = useState(false);
+  useEffect(() => {
+    const onScroll = () => {
+      const top = window.scrollY;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      setProgress(max > 0 ? (top / max) * 100 : 0);
+      setScrolled(top > 50);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
-    const links = [
-        {
-            id: 1,
-            link: 'home',
-        },
-        {
-            id: 2,
-            link: 'about',
-        },
-        {
-            id: 3,
-            link: 'experience',
-        },
-        {
-            id: 4,
-            link: 'skills',
-        },
-        {
-            id: 5,
-            link: 'project',
-        },
-        {
-            id: 6,
-            link: 'contact',
-        },
-    ]
+  const links = [
+    { id: 1, link: 'home',       label: 'Home' },
+    { id: 2, link: 'about',      label: 'About' },
+    { id: 3, link: 'experience', label: 'Resume' },
+    { id: 4, link: 'skills',     label: 'Skills' },
+    { id: 5, link: 'project',    label: 'Projects' },
+    { id: 6, link: 'contact',    label: 'Contact' },
+  ];
 
-    return (
-        <div className="bg-slate-950/75 backdrop-blur-md border-b border-slate-800/80 px-6 flex justify-between items-center w-full h-20 text-white fixed top-0 z-50 transition-all duration-300">
+  return (
+    <>
+      {/* Scroll progress */}
+      <div className="scroll-progress" style={{ width: `${progress}%` }} />
 
-            <div className="flex items-center">
-                <Link to="home" smooth duration={500} className="cursor-pointer group">
-                    <h1 className="text-3xl font-signature font-bold text-hemant group-hover:scale-105 duration-300 flex items-center gap-1">
-                        Hemant<span className="text-white group-hover:text-hemant duration-300">Singh</span>
-                    </h1>
+      <nav className={`navbar fixed top-0 left-0 w-full h-[72px] flex items-center justify-between px-6 md:px-10 z-50 transition-all duration-500 ${scrolled ? 'shadow-[0_4px_30px_rgba(0,0,0,0.6)]' : ''}`}>
+
+        {/* Logo */}
+        <Link to="home" smooth duration={600} className="cursor-pointer group flex-shrink-0">
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-300"
+                 style={{ background: 'linear-gradient(135deg, var(--primary), var(--green))', boxShadow: '0 0 15px rgba(37,99,235,0.4)' }}>
+              <span className="text-black font-black font-Orbitron text-sm">H</span>
+            </div>
+            <span className="font-Orbitron font-bold text-lg tracking-wide">
+              <span style={{ color: 'var(--primary)' }}>Hemant</span>
+              <span style={{ color: 'rgba(232,240,255,0.8)' }}> Singh</span>
+            </span>
+          </div>
+        </Link>
+
+        {/* Desktop nav */}
+        <ul className="hidden md:flex items-center gap-1">
+          {links.map(({ id, link, label }) => (
+            <li key={id}>
+              <Link to={link} smooth duration={600} offset={-80} spy activeClass="nav-link-active" className="nav-link cursor-pointer inline-block">
+                {label}
+              </Link>
+            </li>
+          ))}
+          <li className="ml-3">
+            <a href="Hemant_Singh_Software_Engineer.pdf" target="_blank" rel="noopener noreferrer">
+              <button className="btn-primary text-sm py-2 px-5 rounded-lg"><span>Resume ↗</span></button>
+            </a>
+          </li>
+        </ul>
+
+        {/* Mobile toggle */}
+        <button onClick={() => setNav(!nav)} className="md:hidden p-2 z-50 transition-colors duration-300"
+                style={{ color: nav ? 'var(--neon)' : 'rgba(200,215,240,0.7)' }} aria-label="Toggle menu">
+          {nav ? <FaTimes size={22} /> : <FaBars size={22} />}
+        </button>
+
+        {/* Mobile menu */}
+        <div className={`fixed inset-0 z-40 flex flex-col items-center justify-center transition-all duration-500 md:hidden ${nav ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+             style={{ background: 'rgba(7,8,15,0.97)', backdropFilter: 'blur(20px)' }}>
+          <div className="orb orb-neon absolute w-[300px] h-[300px] top-1/4 left-1/4 opacity-10 pointer-events-none" />
+          <ul className="flex flex-col items-center gap-2 z-10">
+            {links.map(({ id, link, label }) => (
+              <li key={id}>
+                <Link onClick={() => setNav(false)} to={link} smooth duration={600} offset={-80}
+                      className="block text-3xl font-Outfit font-bold py-3 px-8 cursor-pointer transition-colors duration-300"
+                      style={{ color: 'rgba(200,215,240,0.7)' }}
+                      onMouseEnter={e => { e.currentTarget.style.color = 'var(--neon)'; }}
+                      onMouseLeave={e => { e.currentTarget.style.color = 'rgba(200,215,240,0.7)'; }}>
+                  {label}
                 </Link>
-            </div>
-
-            <ul className="hidden md:flex items-center gap-2">
-                {links.map(({ id, link }) => (
-                    <li key={id} className="px-4 py-2 cursor-pointer capitalize font-semibold font-Outfit text-slate-300 hover:text-cyan-400 transition-all duration-300 relative group">
-                        <Link to={link} smooth duration={500} offset={-80} spy={true} activeClass="text-cyan-400">
-                            {link}
-                        </Link>
-                        <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-cyan-500 group-hover:w-full transition-all duration-300"></span>
-                    </li>
-                ))}
-            </ul>
-
-            <div onClick={() => setNav(!nav)} className="cursor-pointer pr-2 z-50 text-slate-300 hover:text-cyan-400 duration-300 md:hidden">
-                {nav ? <FaTimes size={26} /> : <FaBars size={26} />}
-            </div>
-
-            {nav && (
-                <ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-slate-950/95 backdrop-blur-lg text-slate-300 transition-all duration-300">
-                    {links.map(({ id, link }) => (
-                        <li key={id} className="px-4 cursor-pointer capitalize py-6 text-3xl font-semibold font-Outfit hover:text-cyan-400 duration-300">
-                            <Link onClick={() => setNav(false)} to={link} smooth duration={500} offset={-80}>
-                                {link}
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
-            )}
-
+              </li>
+            ))}
+            <li className="mt-4">
+              <a href="Hemant_Singh_Software_Engineer.pdf" target="_blank" rel="noopener noreferrer">
+                <button className="btn-primary text-base"><span>Download Resume</span></button>
+              </a>
+            </li>
+          </ul>
         </div>
-    )
-}
+      </nav>
+    </>
+  );
+};
 
-export default Navbar
+export default Navbar;
