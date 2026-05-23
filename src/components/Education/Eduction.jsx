@@ -37,34 +37,29 @@ const Eduction = () => {
                     <div className="py-6  font-titleFont flex flex-col">
 
                         <h2 className="text-3xl md:text-4xl font-bold ">Experience</h2>
-                        <p className="text-sm text-hemant tracking-[4px]">Sept-2022 - Present</p>
+                        <p className="text-sm text-hemant tracking-[4px]">Feb 2023 - Present</p>
                     </div>
                     <div className="mt-6 w-full h-auto border-l-[6px] border-l-gray-500 border-opacity-30 flex flex-col ">
                         <EducationCard
                             title="Software Engineer"
-                            subTitle="Ecohodo Technologies - (Aug-2024 - present)"
-                            result="Gurgaon"
-
+                            subTitle="Oriserve India Pvt. Ltd. - (Mar 2025 - Present)"
+                            result="Noida"
+                        />
+                        <EducationCard
+                            title="Software Engineer (Founding Engineer)"
+                            subTitle="Ecohodo Technologies Pvt. Ltd. - (Jul 2024 - Mar 2025)"
+                            result="New Delhi"
                         />
                         <EducationCard
                             title="Software Developer"
-                            subTitle="Plutos One - (Mar-2024 - Aug-2024)"
-                            result="NCR"
-
+                            subTitle="Plutos One - (Mar 2024 - Jul 2024)"
+                            result="Noida"
                         />
                         <EducationCard
                             title="Junior Software Developer"
-                            subTitle="Virtuzo Infosystem Pvt. Ltd. - (Feb-2023 - Mar-2024)"
-                            result="NCR"
-
-                        />
-{/*                         <EducationCard
-                            title="Software Developer Intern"
-                            subTitle="Ducat Training School- (Sept-2022 - Feb-2023)"
+                            subTitle="Virtuzo Infosystems - (Feb 2023 - Mar 2024)"
                             result="Noida"
-
-                        /> */}
-
+                        />
                     </div>
                 </div>
 

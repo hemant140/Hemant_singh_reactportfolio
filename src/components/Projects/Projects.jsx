@@ -14,6 +14,23 @@ const Projects = () => {
 
         <div className='grid grid-cols-3 gap-14 max-sm:grid-cols-1 max-lg:grid-cols-2'>
           <Projectscard
+            title="Orimon.ai"
+            des="Architected and owned core backend features for Orimon.ai AI-powered chatbot platform using Node.js, Express.js, NestJS, and TypeScript. Built workflow automation engine, FAQ management system, and chat summarization services."
+            src="https://api.microlink.io/?url=https%3A%2F%2Forimon.ai&screenshot=true&meta=false&embed=screenshot.url"
+            projectLink={true}
+            projectUrl="https://orimon.ai"
+          />
+          <Projectscard
+            title="GHG Sync Carbon Reporting"
+            des="Architected and developed multi-tenant Carbon Emissions Reporting SaaS platform backend using NestJS, Node.js, TypeScript, and MongoDB. Built centralized authentication and authorization system using JWT and RBAC."
+            src="https://api.microlink.io/?url=https%3A%2F%2Fecohodo.com&screenshot=true&meta=false&embed=screenshot.url"
+          />
+          <Projectscard
+            title="Plutos One (BBPS)"
+            des="Spearheaded the development and integration of Technology Service Provider (TSP) solutions for the Bharat Bill Payment System (BBPS) using Nest.js framework. Engineered robust APIs, ensuring seamless integration with BBPS standards and protocols."
+            src="https://api.microlink.io/?url=https%3A%2F%2Fwww.plutos.one&screenshot=true&meta=false&embed=screenshot.url"
+          />
+          <Projectscard
             title="Esim Source "
             des="As a junior software developer at Virtuzo Infosystems Pvt Ltd, I contributed to projects built with React, Redux, MySQL.I played a key role in designing, implementing, and maintaining these projects."
             src="images/sim.jpg"

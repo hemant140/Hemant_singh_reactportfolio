@@ -6,7 +6,7 @@ import { useTypewriter, Cursor } from "react-simple-typewriter";
 const Home = () => {
 
     const [text] = useTypewriter({
-        words: ["Software Engineer.", "Full Stack Developer.", "Flutter Developer."],
+        words: ["Software Engineer.", "MERN Stack Developer.", "NestJS Developer.", "Full Stack Engineer."],
         loop: true,
         typeSpeed: 60,
         deleteSpeed: 30,
@@ -32,9 +32,8 @@ const Home = () => {
                     </div>
                 </div>
 
-                <div className="bg-gradient-to-b from-teal-500  to-gray-600 rounded-full w-80 h-80 ml-16 max-lg:w-72 max-lg:h-72 max-md:w-64 max-md:h-64 max-sm:w-52 sm:flex  hidden max-sm:h-52 ">
-                    <img width='270' src="images/avtar.png" alt="Avtar" className=" w-80 my-10 max-lg:w-72  max-md:w-64
-                    " />
+                <div className="bg-gradient-to-b from-teal-500  to-gray-600 rounded-full w-80 h-80 ml-16 max-lg:w-72 max-lg:h-72 max-md:w-64 max-md:h-64 max-sm:w-52 sm:flex  hidden max-sm:h-52 overflow-hidden">
+                    <img src="images/avtar.png" alt="Avtar" className="w-full h-full object-cover" />
                 </div>
 
             </div>
