@@ -1,27 +1,61 @@
 import React from 'react'
 
-const EducationCard = ({ title, subTitle, result, des }) => {
+const EducationCard = ({ title, subTitle, result, des, points, isActive }) => {
     return (
-        <div className="w-full h-1/3 group flex ">
-            <div className="w-10 h-[6px] bg-gray-500 opacity-30 mt-16 relative">
-                <span className="absolute w-5 h-5 rounded-full -top-2 -left-3 flex justify-center items-center bg-black bg-opacity-60">
-                    <span className="w-3 h-3 rounded-full bg-lightpink inline-flex group-hover:bg-white opacity-100 duration-300"></span>
+        <div className="w-full h-auto group flex relative">
+            {/* Timeline Left Node connector */}
+            <div className="w-10 flex-shrink-0 flex justify-center relative">
+                {/* Horizontal connection line */}
+                <div className="w-10 h-[2px] bg-slate-800 absolute top-12 left-0 group-hover:bg-[#ff014f]/50 duration-300"></div>
+                {/* Node dot */}
+                <span className={`absolute w-5 h-5 rounded-full top-[38px] left-[10px] flex justify-center items-center bg-slate-950 border-2 z-10 duration-300 ${isActive ? 'border-[#ff014f] glow-node' : 'border-slate-700 group-hover:border-[#ff014f]'}`}>
+                    <span className={`w-2 h-2 rounded-full inline-flex duration-300 ${isActive ? 'bg-[#ff014f] scale-110' : 'bg-[#ff014f]/70 group-hover:bg-white group-hover:scale-125'}`}></span>
                 </span>
             </div>
-            <div className="w-full max-w-xl background  rounded-lg p-4 flex flex-col justify-center  shadow-shadowOn mb-7 hover:scale-105 duration-300">
-                <div className="flex flex-col lgl:flex-row justify-between lgl:items-center">
-                    <div>
-                        <h3 className="text-lg md:text-2xl text-hemant font-semibold group-hover:text-white duration-300">
-                            {title}
-                        </h3>
-                        <div className="text-base mt-2 text-gray-400 group-hover:text-white duration-300">
-                            {subTitle}
-                            <p className="mt-1">{result}</p>
-                        </div>
-                    </div>
 
+            {/* Content Card */}
+            <div className={`w-full ml-4 glass-card rounded-xl p-6 mb-8 border backdrop-blur-md duration-300 ${isActive ? 'border-[#ff014f]/40 bg-slate-900/50 shadow-[0_4px_20px_rgba(255,1,79,0.08)]' : 'border-slate-800/80 bg-slate-900/30 hover:border-[#ff014f]/30'}`}>
+                <div className="flex flex-col md:flex-row justify-between md:items-start gap-3">
+                    <div>
+                        <div className="flex flex-wrap items-center gap-2">
+                            <h3 className="text-xl md:text-2xl text-[#ff014f] font-bold group-hover:text-white duration-300 font-Outfit">
+                                {title}
+                            </h3>
+                            {isActive && (
+                                <span className="text-[10px] font-extrabold tracking-wider bg-gradient-to-r from-[#ff014f] to-cyan-500 text-white px-2 py-0.5 rounded-full uppercase shadow-md animate-pulse">
+                                    Active
+                                </span>
+                            )}
+                        </div>
+                        <p className="text-base text-slate-300 mt-1 font-semibold font-Outfit">
+                            {subTitle}
+                        </p>
+                    </div>
+                    {result && (
+                        <span className={`px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full w-fit flex-shrink-0 ${isActive ? 'text-white bg-[#ff014f]/20 border border-[#ff014f]/50' : 'text-cyan-400 bg-cyan-950/40 border border-cyan-800/60'}`}>
+                            {result}
+                        </span>
+                    )}
                 </div>
 
+                {/* Plain description if present */}
+                {des && (
+                    <p className="mt-4 text-slate-400 font-Outfit text-sm md:text-base leading-relaxed">
+                        {des}
+                    </p>
+                )}
+
+                {/* Detailed Professional Achievements Bullet Points */}
+                {points && points.length > 0 && (
+                    <ul className="mt-4 space-y-2 border-t border-slate-800/60 pt-4">
+                        {points.map((point, index) => (
+                            <li key={index} className="flex items-start gap-2 text-slate-400 group-hover:text-slate-300 duration-300 text-sm md:text-base leading-relaxed">
+                                <span className="text-[#ff014f] mt-1.5 flex-shrink-0 text-xs">◆</span>
+                                <span>{point}</span>
+                            </li>
+                        ))}
+                    </ul>
+                )}
             </div>
         </div>
     )

@@ -1,12 +1,10 @@
 import React from "react";
-
 import { useTypewriter, Cursor } from "react-simple-typewriter";
-
 
 const Home = () => {
 
     const [text] = useTypewriter({
-        words: ["Software Engineer.", "MERN Stack Developer.", "NestJS Developer.", "Full Stack Engineer."],
+        words: ["Senior Software Engineer.", "NestJS Specialist.", "Full-Stack Developer.", "SaaS Architect."],
         loop: true,
         typeSpeed: 60,
         deleteSpeed: 30,
@@ -14,31 +12,68 @@ const Home = () => {
     });
 
     return (
-        <div name="home" className="h-screen w-full bg-gradient-to-b from-black to-gray-800">
-            <div className="max-w-screen-lg mx-auto flex  items-center justify-center h-full px-4 md:flex-row max-sm:justify-center">
-                <div className="flex flex-col justify-center h-full">
-                    <h2 className="text_name  font-bold text-white">Hello ,I'm </h2>
-                    <p className="text-hemant text-7xl font-bold max-md:text-5xl max-lg:6xl max-sm:text-6xl">Hemant Singh</p>
-                    <h2 className="text-4xl font-bold text-white max-sm:text-4xl  max-md:text-2xl">a <span>{text}</span><Cursor
-                        cursorBlinking="false"
-                        cursorStyle="|"
-                        cursorColor="#ff014f"
-                    /></h2>
-                    <div>
-                        <a href="https://www.linkedin.com/in/hemant-singh-646826227/" target="_blank" rel='noreferrer' > <button className="text-white font-bold bg-teal-500  w-fit px-6 py-3 my-2 rounded-md max-sm:px-3 max-sm:py-2 hover:scale-110 duration-300">
-                            Hire me
-                        </button></a>
+        <div name="home" className="h-screen w-full bg-slate-950 relative overflow-hidden flex items-center">
+            {/* Background ambient glowing circles */}
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#ff014f]/10 rounded-full blur-[120px] pointer-events-none"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none"></div>
 
+            <div className="max-w-screen-lg mx-auto flex flex-col-reverse md:flex-row items-center justify-between h-full w-full px-6 md:px-12 z-10 gap-10">
+                <div className="flex flex-col justify-center h-full flex-1">
+                    <span className="text_name font-semibold text-slate-400 tracking-wider font-Outfit">Hello, I'm</span>
+                    <h1 className="text-[#ff014f] text-6xl md:text-7xl font-extrabold font-Outfit tracking-tight leading-none my-3">
+                        Hemant Singh
+                    </h1>
+                    <h2 className="text-2xl md:text-3xl font-bold text-white font-Outfit flex items-center gap-2">
+                        a <span className="text-cyan-400">{text}</span>
+                        <Cursor
+                            cursorBlinking="false"
+                            cursorStyle="|"
+                            cursorColor="#ff014f"
+                        />
+                    </h2>
+                    <p className="text-slate-400 mt-4 max-w-lg text-lg leading-relaxed font-Outfit">
+                        Full-Stack Software Engineer with 3.5+ years of experience specializing in scalable backend services, microservices, NestJS, and high-performance system design.
+                    </p>
+                    <div className="mt-8 flex gap-4">
+                        <a 
+                            href="https://www.linkedin.com/in/hemant140/" 
+                            target="_blank" 
+                            rel='noreferrer'
+                            className="inline-block"
+                        >
+                            <button className="text-white font-bold bg-[#ff014f] px-8 py-3.5 rounded-lg shadow-[0_4px_20px_rgba(255,1,79,0.3)] hover:shadow-[0_4px_30px_rgba(255,1,79,0.5)] hover:scale-105 transition-all duration-300 font-Outfit tracking-wide">
+                                Hire Me
+                            </button>
+                        </a>
+                        <a 
+                            href="#about"
+                            className="inline-block"
+                        >
+                            <button className="text-slate-300 hover:text-white font-bold bg-slate-800/40 hover:bg-slate-800/80 border border-slate-700 px-8 py-3.5 rounded-lg hover:scale-105 transition-all duration-300 font-Outfit tracking-wide">
+                                About Me
+                            </button>
+                        </a>
                     </div>
                 </div>
 
-                <div className="bg-gradient-to-b from-teal-500  to-gray-600 rounded-full w-80 h-80 ml-16 max-lg:w-72 max-lg:h-72 max-md:w-64 max-md:h-64 max-sm:w-52 sm:flex  hidden max-sm:h-52 overflow-hidden">
-                    <img src="images/avtar.png" alt="Avtar" className="w-full h-full object-cover" />
+                <div className="flex-1 flex justify-center md:justify-end items-center mt-20 md:mt-0">
+                    <div className="relative group">
+                        {/* Glowing Background Rings */}
+                        <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-[#ff014f] to-cyan-500 blur-md opacity-75 group-hover:opacity-100 transition duration-500 group-hover:scale-105"></div>
+                        <div className="relative bg-slate-950 rounded-full w-64 h-64 md:w-80 md:h-80 overflow-hidden flex items-center justify-center p-1.5 transition duration-500 group-hover:scale-102">
+                            <div className="w-full h-full rounded-full overflow-hidden bg-slate-900">
+                                <img 
+                                    src="images/avtar.png" 
+                                    alt="Hemant Singh Avatar" 
+                                    className="w-full h-full object-cover object-center group-hover:scale-110 duration-500" 
+                                />
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Home
+export default Home;

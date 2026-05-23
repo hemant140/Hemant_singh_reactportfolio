@@ -2,46 +2,61 @@ import React from 'react'
 
 const About = () => {
     return (
-        <div name='about' className='w-full h-screen bg-gradient-to-b from-gray-800 to-black text-white'>
-
-
-            <div className='max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full'>
-                <div className='pb-8'>
-                    {/* <p className='text-4xl font-bold inline border-b-4 border-gray-500'>About</p> */}
+        <div name='about' className='w-full min-h-screen bg-slate-950 text-white flex items-center py-20 relative'>
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-slate-900 via-slate-950 to-slate-950 opacity-80"></div>
+            
+            <div className='max-w-screen-lg p-6 mx-auto flex flex-col justify-center w-full z-10'>
+                <div className='pb-4'>
+                    <h2 className='text-5xl font-extrabold font-Outfit inline border-b-4 border-[#ff014f] tracking-tight'>
+                        About Me
+                    </h2>
                 </div>
 
-                <div className='flex justify-center'>
-                    <div className=" hidden md:flex bg-gradient-to-b from-teal-500  to-gray-600 rounded-full w-72 h-72 mt-32 ml-4 mr-16  max-lg:w-64 max-lg:h-64 max-md:w-52 max-md:h-52">
-                        <img src="images/pic.png" alt="Avtar" className="mx-auto w-2/3 md:w-80 max-md:w-52
-                    " />
-                    </div>
-                    <div className='flex-1'>
-                        <p className=' mx-2 text-5xl max-lg:text-3xl max-md:text-4xl font-bold inline border-b-4 border-gray-500 max-[390px]:text-3xl max-md:mx-0'>About</p>
-                        <p className='text-lg  px-2 max mt-10 text-gray-600 text-justify max-md:text-lg max-[390px]:text-base' >
-                            <span className='text-lg text-gray-600 max-lg:text-lg max-md:text-lg max-[390px]:text-base'>Hi,</span><br />
-                            I am a Full-Stack Software Engineer with strong backend expertise, specializing in scalable API architectures, microservices, and distributed systems using Node.js, Express.js, TypeScript, NestJS, MongoDB, MySQL, and AWS.
-                            <br /><br />
-                            I have delivered multi-tenant SaaS platforms with robust authentication systems, streamlined API reliability, and production-grade REST APIs. My experience includes building centralized JWT/RBAC authentication ensuring secure session management, automated CI/CD pipelines enabling rapid deployment cycles, and optimized database architectures for scalable performance.
-                            <br /><br />
-                            I have a proven track record of engineering reliable backend systems, seamless frontend-backend integration, and maintainable full-stack solutions.
-                            <br /> <span className='text-lg text-gray-500 max-lg:text-lg max-md:text-lg max-[390px]:text-lg'> Thank You!</span>
-                        </p>
-                        <div>
-                            <a href="Hemant_Singh_Resume_Software_Engineer (3).pdf" target='_blank' ><button className="text-white font-bold bg-teal-500 w-fit px-4 py-2 my-2 rounded-md max-sm:px-3 max-sm:py-2 hover:scale-110 duration-300 cursor-pointer">
-                                Resume
-                            </button></a>
+                <div className='flex flex-col md:flex-row gap-12 items-center justify-between mt-12'>
+                    {/* Visual Container */}
+                    <div className="hidden md:flex relative group flex-shrink-0">
+                        <div className="absolute -inset-1 rounded-3xl bg-gradient-to-br from-[#ff014f] to-cyan-500 blur opacity-40 group-hover:opacity-75 duration-500"></div>
+                        <div className="relative w-64 h-64 md:w-72 md:h-72 rounded-3xl overflow-hidden bg-slate-900 border border-slate-800 p-2">
+                            <img 
+                                src="images/pic.png" 
+                                alt="Hemant Singh Portrait" 
+                                className="w-full h-full object-cover rounded-2xl group-hover:scale-105 duration-500" 
+                            />
                         </div>
-
                     </div>
 
-
-
+                    {/* Text Container with Glassmorphic Card */}
+                    <div className='flex-1 glass-card rounded-2xl p-8 border border-slate-800/80 bg-slate-900/40 backdrop-blur-md'>
+                        <h3 className="text-2xl font-bold font-Outfit text-[#ff014f] mb-4">
+                            Hi, I'm Hemant Singh
+                        </h3>
+                        <div className='text-slate-300 leading-relaxed font-Outfit space-y-4 text-justify text-base md:text-lg'>
+                            <p>
+                                I am a <strong className="text-white">Senior Software Engineer</strong> with <strong className="text-white">3.5+ years of experience</strong> specializing in robust backend development, scalable microservices architectures, and high-performance full-stack solutions.
+                            </p>
+                            <p>
+                                I specialize in building production-grade APIs using <strong className="text-slate-200">Node.js, NestJS, TypeScript, and Express.js</strong>. I have a proven track record of designing multi-tenant SaaS architectures, integrating advanced AI-based systems (like real-time dynamic pricing engines), and maintaining secure authentication models (JWT, Role-Based Access Control).
+                            </p>
+                            <p>
+                                With strong skills in databases like <strong className="text-slate-200">MongoDB, MySQL, PostgreSQL, and Redis</strong>, alongside modern cloud setups like <strong className="text-slate-200">AWS (EC2), Docker, and CI/CD pipelines (GitHub Actions)</strong>, I engineer highly maintainable systems that scale seamlessly under load.
+                            </p>
+                        </div>
+                        <div className="mt-8 flex items-center gap-6">
+                            <a 
+                                href="Hemant_Singh_Software_Engineer.pdf" 
+                                target='_blank' 
+                                rel="noopener noreferrer"
+                                className="inline-block"
+                            >
+                                <button className="text-white font-bold bg-[#ff014f] hover:bg-[#e00045] shadow-[0_4px_15px_rgba(255,1,79,0.2)] px-6 py-3 rounded-lg hover:scale-105 duration-300 cursor-pointer font-Outfit tracking-wide">
+                                    View Resume
+                                </button>
+                            </a>
+                            <span className="text-slate-400 font-Outfit italic text-sm">Thank you for visiting!</span>
+                        </div>
+                    </div>
                 </div>
-
-
-
             </div>
-
         </div>
     )
 }

@@ -4,37 +4,118 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer-base {
+@layer base {
   html {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Inter', 'Raleway', sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  /* Scroll margin for fixed navbar */
+  section, [name] {
+    scroll-margin-top: 80px;
+  }
+
+  /* Custom Premium Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #090d16;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 4px;
+    border: 2px solid #090d16;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #ff014f;
   }
 }
 
-
+/* Premium UI Utility Classes */
 .NavBar {
-  background-color: #111;
+  background-color: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
-.text_name{
+.text_name {
+  font-family: 'Outfit', sans-serif;
   font-size: 27px;
 }
-.text-hemant{
+
+.text-hemant {
   color: #ff014f;
 }
 
-.bg-lightpink{
+.bg-lightpink {
   background-color: #ff014f;
-  
-}
-.bg-lightpink :hover{
- background-color: #ff014f;
 }
 
-.background{
-  background-color: #121212;
+.bg-lightpink:hover {
+  background-color: #e00045;
+  box-shadow: 0 0 15px rgba(255, 1, 79, 0.4);
 }
 
-*{
+.background {
+  background-color: #0d121f;
+}
+
+/* Premium Glassmorphic Card */
+.glass-card {
+  background: rgba(30, 41, 59, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(255, 1, 79, 0.2);
+  box-shadow: 0 12px 40px 0 rgba(255, 1, 79, 0.1);
+  transform: translateY(-4px);
+}
+
+/* Floating Node glow */
+.glow-node {
+  box-shadow: 0 0 10px rgba(255, 1, 79, 0.5);
+  animation: pulse-glow 2s infinite alternate;
+}
+
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 8px rgba(255, 1, 79, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 16px rgba(255, 1, 79, 0.8);
+  }
+}
+
+/* Revamp Animation: Smooth Fade In Up */
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Premium Glow Underlines for Active Tabs */
+.active-tab-glow {
+  box-shadow: 0 0 15px rgba(255, 1, 79, 0.6);
+}
+
+
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
