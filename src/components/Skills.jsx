@@ -37,7 +37,7 @@ const ROW3 = [
 ];
 
 const SkillPill = ({ icon, label, color }) => (
-  <div className="skill-pill">
+  <div className="skill-pill" style={{ '--pill-color': color }}>
     <span style={{ color, fontSize: 18, flexShrink: 0 }}>{icon}</span>
     <span>{label}</span>
   </div>

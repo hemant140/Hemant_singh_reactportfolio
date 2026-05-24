@@ -538,7 +538,43 @@ body { transition: background-color 0.35s ease, color 0.35s ease; }
 }
 
 /* ==================== ENHANCED SKILL PILL HOVER ==================== */
-.skill-pill:hover { transform: translateY(-3px); }
+.skill-pill:hover {
+  border-color: var(--pill-color, var(--border-bright));
+  color: var(--pill-color, var(--primary));
+  background: var(--bg-card);
+  box-shadow: 0 4px 20px var(--shadow-lg);
+  transform: translateY(-3px);
+}
+
+/* ==================== NAV PILL (redesigned navbar) ==================== */
+.nav-pill {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600; font-size: 0.875rem;
+  color: var(--text-dim);
+  padding: 0.4rem 0.9rem;
+  border-radius: 0.625rem;
+  display: inline-block;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+.nav-pill:hover { color: var(--text); background: var(--primary-08); }
+.nav-pill-active {
+  color: var(--primary) !important;
+  background: var(--primary-08) !important;
+}
+
+/* Mobile drawer */
+.mobile-drawer {
+  transition: transform 0.38s cubic-bezier(0.16,1,0.3,1);
+}
+
+/* ==================== ORBIT LABEL ==================== */
+.orbit-label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.65rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.14em;
+  color: var(--text-dim); white-space: nowrap;
+}
 
 /* ==================== BENTO GRID HOME ==================== */
 .bento-grid {
