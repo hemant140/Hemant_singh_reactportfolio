@@ -372,6 +372,12 @@
 }
 
 /* ==================== ANIMATIONS ==================== */
+/* ==================== ORBIT ANIMATIONS ==================== */
+@keyframes orbitCW    { from { transform: rotate(0deg); }    to { transform: rotate(360deg); } }
+@keyframes counterCW  { from { transform: rotate(0deg); }    to { transform: rotate(-360deg); } }
+@keyframes orbitCCW   { from { transform: rotate(0deg); }    to { transform: rotate(-360deg); } }
+@keyframes counterCCW { from { transform: rotate(0deg); }    to { transform: rotate(360deg); } }
+
 @keyframes fadeUp   { 0%{opacity:0;transform:translateY(40px)}  100%{opacity:1;transform:translateY(0)} }
 @keyframes fadeLeft { 0%{opacity:0;transform:translateX(-40px)} 100%{opacity:1;transform:translateX(0)} }
 @keyframes fadeRight{ 0%{opacity:0;transform:translateX(40px)}  100%{opacity:1;transform:translateX(0)} }
@@ -533,3 +539,130 @@ body { transition: background-color 0.35s ease, color 0.35s ease; }
 
 /* ==================== ENHANCED SKILL PILL HOVER ==================== */
 .skill-pill:hover { transform: translateY(-3px); }
+
+/* ==================== BENTO GRID HOME ==================== */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: minmax(240px, 1fr) 130px 148px;
+  grid-template-areas:
+    "i i i i i i i p p p a a"
+    "i i i i i i i p p p b b"
+    "s s s s t t t t t c c c";
+  gap: 0.875rem;
+  padding: calc(72px + 1.25rem) 1.5rem 5rem;
+  min-height: 100vh;
+  position: relative;
+  z-index: 10;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+}
+.bento-intro  { grid-area: i; }
+.bento-photo  { grid-area: p; }
+.bento-info1  { grid-area: a; }
+.bento-info2  { grid-area: b; }
+.bento-stats  { grid-area: s; }
+.bento-tech   { grid-area: t; }
+.bento-code   { grid-area: c; }
+
+.bento-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 4px 24px var(--shadow), 0 1px 4px rgba(0,0,0,0.04);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.25s ease;
+}
+.bento-card:hover {
+  border-color: var(--border-bright);
+  box-shadow: 0 12px 40px var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+  .bento-grid {
+    display: flex;
+    flex-direction: column;
+    padding: calc(72px + 1rem) 1rem 4rem;
+    gap: 0.75rem;
+    min-height: unset;
+    max-width: 100%;
+  }
+  .bento-photo { min-height: 360px; }
+  .bento-info1 { display: none; }
+  .bento-info2 { display: none; }
+  .bento-stats { min-height: 90px; }
+  .bento-tech  { min-height: 80px; }
+  .bento-code  { min-height: 130px; }
+}
+
+/* ==================== INTERACTIVE TIMELINE ==================== */
+.itl-split {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+@media (max-width: 768px) {
+  .itl-split { grid-template-columns: 1fr; gap: 1rem; }
+  .itl-nav-scroll { display: flex; flex-direction: row; overflow-x: auto; gap: 0.5rem; padding-bottom: 0.5rem; }
+  .itl-nav-btn { width: auto; flex-shrink: 0; }
+}
+
+.itl-nav-btn {
+  width: 100%;
+  text-align: left;
+  padding: 0.8rem 0.875rem;
+  border-radius: 0.875rem;
+  border: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+.itl-nav-btn::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  border-radius: 0 2px 2px 0;
+  opacity: 0;
+  transition: opacity 0.22s ease;
+  background: var(--itl-color, var(--primary));
+}
+.itl-nav-btn.itl-active::before { opacity: 1; }
+.itl-nav-btn.itl-active {
+  border-color: var(--border);
+  background: var(--bg-card);
+  box-shadow: 0 4px 16px var(--shadow);
+}
+.itl-nav-btn:not(.itl-active):hover {
+  background: var(--primary-04);
+  border-color: var(--border);
+}
+
+.itl-detail-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  padding: 2rem 2rem 2rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 24px var(--shadow);
+  min-height: 380px;
+  animation: slideInDetail 0.38s cubic-bezier(0.16,1,0.3,1) both;
+}
+.itl-accent-bar {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 4px;
+  border-radius: 0 2px 2px 0;
+}
+
+@keyframes slideInDetail {
+  from { opacity: 0; transform: translateX(18px); }
+  to   { opacity: 1; transform: none; }
+}
