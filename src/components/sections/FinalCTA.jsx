@@ -141,7 +141,7 @@ const LivingNetwork = ({ className = '' }) => {
 
 // Social link data
 const SOCIAL_LINKS = [
-  { icon: FiMail, href: 'mailto:hemantsingh14022000@gmail.com', label: 'Email' },
+  { icon: FiMail, href: 'mailto:hemo.hm579@gmail.com', label: 'Email' },
   { icon: FiLinkedin, href: 'https://linkedin.com/in/hemantsingh140', label: 'LinkedIn' },
   { icon: FiGithub, href: 'https://github.com/hemant140', label: 'GitHub' },
   { icon: FiTwitter, href: 'https://twitter.com/hemantsingh140', label: 'Twitter' },
@@ -226,7 +226,7 @@ const FinalCTA = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.4 }}
         >
-          <GradientButton href="mailto:hemantsingh14022000@gmail.com">
+          <GradientButton href="mailto:hemo.hm579@gmail.com">
             Let's Build Something That Scales
           </GradientButton>
           <SecondaryButton href="https://calendly.com/hemantsingh140">

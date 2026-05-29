@@ -86,7 +86,7 @@ const Navbar = () => {
                 Hemant Singh
               </p>
               <p className="text-[10px] text-[var(--text-dim)] tracking-wide uppercase">
-                Founding Engineer
+                Sr. Software Engineer
               </p>
             </div>
           </Link>
@@ -246,7 +246,7 @@ const Navbar = () => {
                 </button>
               </a>
               <a
-                href="mailto:hemantsingh14022000@gmail.com"
+                href="mailto:hemo.hm579@gmail.com"
                 className="block mt-2"
               >
                 <button className="btn-secondary w-full py-3">

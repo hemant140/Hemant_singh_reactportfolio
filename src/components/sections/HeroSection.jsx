@@ -9,7 +9,7 @@ import { PrimaryButton, SecondaryButton } from '../common/Button';
 // Stats data
 const STATS = [
   { value: '20+', label: 'Production Projects' },
-  { value: '5', label: 'Startups Built' },
+  { value: '5', label: 'Companies' },
   { value: '3.5+', label: 'Years Experience' },
 ];
 
@@ -72,7 +72,7 @@ const HeroSection = () => {
         <motion.div variants={itemVariants} className="mb-8">
           <div className="status-badge mx-auto">
             <span className="live-indicator" />
-            <span>Founding Engineer @ Blue Enigma</span>
+            <span>Sr. Software Engineer @ Blue Enigma</span>
           </div>
         </motion.div>
 
@@ -91,9 +91,9 @@ const HeroSection = () => {
           variants={itemVariants}
           className="section-subtitle mx-auto mb-10"
         >
-          Founding Engineer with 3.5+ years building AI systems, SaaS platforms,
-          enterprise software, scheduling infrastructure, hotel management systems,
-          and sustainability products. From zero to millions of users.
+          Full-Stack Software Engineer with 3.5+ years specializing in backend development
+          and scalable system design. Building production-grade APIs, microservices,
+          multi-tenant SaaS platforms, AI chatbots, and enterprise hotel management systems.
         </motion.p>
 
         {/* CTA Buttons */}
