@@ -1,28 +1,37 @@
-import About from "./components/About";
-import Contact from "./components/Contact";
-import Eduction from "./components/Education/Eduction";
-import Home from "./components/Home";
 import Navbar from "./components/NavBar";
-import Projects from "./components/Projects/Projects";
-
-import Skills from "./components/Skills";
-
-import Sociallinks from "./components/Sociallinks";
-
-
+import HeroSection from "./components/sections/HeroSection";
+import ProjectCaseStudySection from "./components/sections/ProjectCaseStudy";
+import JourneySection from "./components/sections/JourneySection";
+import SkillsEcosystem from "./components/sections/SkillsEcosystem";
+import AchievementsSection from "./components/sections/AchievementsSection";
+import FinalCTA from "./components/sections/FinalCTA";
 
 function App() {
   return (
-    <div>
-      <Navbar />
-      <Home />
-      <About />
-      <Eduction />
-      <Skills />
-      <Projects />
-      <Contact />
-      <Sociallinks />
+    <div className="relative min-h-screen bg-[var(--bg)]">
+      {/* Noise texture overlay */}
+      <div className="noise-overlay" />
 
+      {/* Navigation */}
+      <Navbar />
+
+      {/* Hero Section */}
+      <HeroSection />
+
+      {/* Project Case Studies */}
+      <ProjectCaseStudySection />
+
+      {/* Experience Journey */}
+      <JourneySection />
+
+      {/* Skills Ecosystem */}
+      <SkillsEcosystem />
+
+      {/* Achievements */}
+      <AchievementsSection />
+
+      {/* Final CTA & Contact */}
+      <FinalCTA />
     </div>
   );
 }

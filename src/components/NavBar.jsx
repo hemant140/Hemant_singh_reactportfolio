@@ -1,14 +1,12 @@
 import { useState, useEffect } from "react";
 import { FaBars, FaTimes } from 'react-icons/fa';
-import { HiOutlineSun, HiOutlineMoon } from 'react-icons/hi';
 import { Link } from "react-scroll";
-import useTheme from '../hooks/useTheme';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [progress, setProgress] = useState(0);
-  const [theme, toggleTheme] = useTheme();
 
   useEffect(() => {
     const onScroll = () => {
@@ -22,75 +20,94 @@ const Navbar = () => {
   }, []);
 
   const links = [
-    { id: 1, link: 'home',       label: 'Home'     },
-    { id: 2, link: 'about',      label: 'About'    },
-    { id: 3, link: 'experience', label: 'Resume'   },
-    { id: 4, link: 'skills',     label: 'Skills'   },
-    { id: 5, link: 'project',    label: 'Projects' },
-    { id: 6, link: 'contact',    label: 'Contact'  },
+    { id: 1, link: 'home',        label: 'Home'       },
+    { id: 2, link: 'projects',    label: 'Work'       },
+    { id: 3, link: 'experience',  label: 'Experience' },
+    { id: 4, link: 'skills',      label: 'Skills'     },
+    { id: 5, link: 'achievements', label: 'Impact'    },
+    { id: 6, link: 'contact',     label: 'Contact'    },
   ];
 
   return (
     <>
       {/* Scroll progress bar */}
-      <div className="scroll-progress" style={{ width: `${progress}%` }} />
+      <motion.div
+        className="fixed top-0 left-0 h-[2px] z-[9999]"
+        style={{
+          width: `${progress}%`,
+          background: 'var(--gradient-brand)',
+          boxShadow: '0 0 10px rgba(59, 130, 246, 0.5)',
+        }}
+        initial={{ scaleX: 0 }}
+        animate={{ scaleX: 1 }}
+        transition={{ duration: 0.2 }}
+      />
 
-      <nav
-        className={`navbar fixed top-0 left-0 w-full z-50 transition-all duration-500 ${scrolled ? 'shadow-[0_4px_30px_rgba(0,0,0,0.25)]' : ''}`}
+      <motion.nav
+        className={`navbar fixed top-0 left-0 w-full z-50 transition-all duration-300`}
         style={{ height: 72 }}
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
       >
-        {/* Gradient accent line at very top */}
-        <div style={{
-          position: 'absolute', top: 0, left: 0, right: 0, height: 2,
-          background: 'linear-gradient(90deg, var(--primary), var(--accent), var(--green))',
-          opacity: scrolled ? 1 : 0.5,
-          transition: 'opacity 0.5s ease',
-        }} />
-
-        <div className="flex items-center justify-between h-full px-6 md:px-10">
+        <div className="flex items-center justify-between h-full px-6 md:px-10 max-w-7xl mx-auto">
 
           {/* Logo */}
-          <Link to="home" smooth duration={600} className="cursor-pointer flex items-center gap-3 group flex-shrink-0">
-            <div
-              className="group-hover:scale-110"
+          <Link
+            to="home"
+            smooth
+            duration={600}
+            className="cursor-pointer flex items-center gap-3 group flex-shrink-0"
+          >
+            <motion.div
+              className="group-hover:scale-105"
               style={{
-                width: 40, height: 40, borderRadius: '50%',
-                background: 'linear-gradient(135deg, var(--primary), var(--accent))',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                boxShadow: '0 0 18px rgba(37,99,235,0.35)',
-                fontFamily: 'Orbitron', fontWeight: 900, color: 'white',
-                fontSize: 13, letterSpacing: '0.05em',
-                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                flexShrink: 0,
+                width: 40,
+                height: 40,
+                borderRadius: 12,
+                background: 'var(--gradient-brand)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                boxShadow: '0 0 20px rgba(59, 130, 246, 0.3)',
+                fontFamily: 'Inter',
+                fontWeight: 800,
+                color: 'white',
+                fontSize: 14,
+                letterSpacing: '-0.02em',
+                transition: 'transform 0.2s ease',
               }}
+              whileHover={{ rotate: 5 }}
             >
               HS
-            </div>
+            </motion.div>
             <div className="hidden sm:block">
-              <p className="font-Orbitron font-bold text-base tracking-wide leading-tight">
-                <span style={{ color: 'var(--primary)' }}>Hemant</span>
-                <span style={{ color: 'var(--text-dim)' }}> Singh</span>
+              <p className="font-semibold text-[15px] tracking-tight leading-tight text-[var(--text)]">
+                Hemant Singh
               </p>
-              <p style={{ fontFamily: 'Outfit', fontSize: '0.6rem', color: 'var(--text-dim)', letterSpacing: '0.12em', textTransform: 'uppercase', lineHeight: 1 }}>
-                Sr. Software Engineer
+              <p className="text-[10px] text-[var(--text-dim)] tracking-wide uppercase">
+                Founding Engineer
               </p>
             </div>
           </Link>
 
-          {/* Desktop nav — links inside a pill container */}
+          {/* Desktop nav */}
           <ul
-            className="hidden md:flex items-center gap-0.5 p-1.5 rounded-2xl"
+            className="hidden md:flex items-center gap-1 p-1.5 rounded-xl"
             style={{
               background: 'var(--bg-card)',
               border: '1px solid var(--border)',
-              boxShadow: '0 2px 14px var(--shadow)',
             }}
           >
             {links.map(({ id, link, label }) => (
               <li key={id}>
                 <Link
-                  to={link} smooth duration={600} offset={-80}
-                  spy activeClass="nav-pill-active"
+                  to={link}
+                  smooth
+                  duration={600}
+                  offset={-80}
+                  spy
+                  activeClass="nav-pill-active"
                   className="nav-pill cursor-pointer"
                 >
                   {label}
@@ -100,121 +117,146 @@ const Navbar = () => {
           </ul>
 
           {/* Right actions */}
-          <div className="hidden md:flex items-center gap-2 flex-shrink-0">
-            <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
-              {theme === 'light' ? <HiOutlineMoon size={17} /> : <HiOutlineSun size={18} />}
-            </button>
-            <a href="Hemant_Singh_Software_Engineer.pdf" target="_blank" rel="noopener noreferrer">
-              <button className="btn-primary text-sm py-2 px-5 rounded-lg">
-                <span>Hire Me ↗</span>
-              </button>
+          <div className="hidden md:flex items-center gap-3 flex-shrink-0">
+            <a
+              href="https://drive.google.com/file/d/1pBsanJxnOhWcr1JwT_u9RqGFBDU-c-dI/view"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <motion.button
+                className="btn-primary text-sm py-2.5 px-5 rounded-lg"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                Resume
+              </motion.button>
             </a>
           </div>
 
           {/* Mobile hamburger */}
-          <button
+          <motion.button
             onClick={() => setNav(!nav)}
-            className="md:hidden p-2 z-50 rounded-xl transition-all duration-300"
+            className="md:hidden p-2.5 z-50 rounded-xl transition-all duration-200"
             style={{
-              color: 'var(--text-dim)',
-              background: nav ? 'var(--primary-08)' : 'transparent',
+              color: 'var(--text-secondary)',
+              background: nav ? 'var(--bg-elevated)' : 'transparent',
               border: `1px solid ${nav ? 'var(--border)' : 'transparent'}`,
             }}
+            whileTap={{ scale: 0.95 }}
             aria-label="Toggle menu"
           >
-            {nav ? <FaTimes size={20} /> : <FaBars size={20} />}
-          </button>
+            {nav ? <FaTimes size={18} /> : <FaBars size={18} />}
+          </motion.button>
         </div>
-      </nav>
+      </motion.nav>
 
-      {/* Mobile — dark backdrop */}
-      <div
-        className={`fixed inset-0 z-40 md:hidden transition-opacity duration-400 ${nav ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
-        style={{ background: 'rgba(0,0,0,0.45)', backdropFilter: 'blur(4px)' }}
-        onClick={() => setNav(false)}
-      />
-
-      {/* Mobile drawer — slides in from right */}
-      <div
-        className={`fixed top-0 right-0 bottom-0 w-72 z-50 md:hidden mobile-drawer ${nav ? 'translate-x-0' : 'translate-x-full'}`}
-        style={{
-          background: 'var(--bg-card)',
-          borderLeft: '1px solid var(--border)',
-          boxShadow: '-8px 0 40px rgba(0,0,0,0.15)',
-          display: 'flex', flexDirection: 'column',
-        }}
-      >
-        {/* Drawer header */}
-        <div style={{
-          padding: '1.25rem 1.5rem',
-          borderBottom: '1px solid var(--border)',
-          display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-          background: 'linear-gradient(135deg, var(--primary-04), transparent)',
-        }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-            <div style={{
-              width: 36, height: 36, borderRadius: '50%',
-              background: 'linear-gradient(135deg, var(--primary), var(--accent))',
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-              fontFamily: 'Orbitron', fontWeight: 900, color: 'white', fontSize: 12,
-              boxShadow: '0 0 14px rgba(37,99,235,0.3)',
-            }}>
-              HS
-            </div>
-            <div>
-              <p style={{ fontFamily: 'Orbitron', fontWeight: 700, fontSize: '0.875rem', color: 'var(--primary)' }}>Hemant Singh</p>
-              <p style={{ fontFamily: 'Outfit', fontSize: '0.6rem', color: 'var(--text-dim)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Navigation</p>
-            </div>
-          </div>
-          <button
+      {/* Mobile backdrop */}
+      <AnimatePresence>
+        {nav && (
+          <motion.div
+            className="fixed inset-0 z-40 md:hidden"
+            style={{ background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(4px)' }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             onClick={() => setNav(false)}
+          />
+        )}
+      </AnimatePresence>
+
+      {/* Mobile drawer */}
+      <AnimatePresence>
+        {nav && (
+          <motion.div
+            className="fixed top-0 right-0 bottom-0 w-72 z-50 md:hidden"
             style={{
-              color: 'var(--text-dim)', padding: 6, borderRadius: 8,
-              transition: 'all 0.2s ease', background: 'transparent', border: 'none', cursor: 'pointer',
+              background: 'var(--bg-card)',
+              borderLeft: '1px solid var(--border)',
+              boxShadow: '-8px 0 40px rgba(0,0,0,0.3)',
             }}
+            initial={{ x: '100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '100%' }}
+            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
           >
-            <FaTimes size={18} />
-          </button>
-        </div>
-
-        {/* Nav links */}
-        <ul style={{ flex: 1, padding: '0.75rem', display: 'flex', flexDirection: 'column', gap: 4 }}>
-          {links.map(({ id, link, label }) => (
-            <li key={id}>
-              <Link
+            {/* Drawer header */}
+            <div
+              className="p-5 border-b border-[var(--border)] flex items-center justify-between"
+              style={{
+                background: 'linear-gradient(135deg, rgba(59,130,246,0.05), transparent)',
+              }}
+            >
+              <div className="flex items-center gap-3">
+                <div
+                  className="w-9 h-9 rounded-lg flex items-center justify-center text-white text-xs font-bold"
+                  style={{
+                    background: 'var(--gradient-brand)',
+                    boxShadow: '0 0 15px rgba(59,130,246,0.3)',
+                  }}
+                >
+                  HS
+                </div>
+                <div>
+                  <p className="font-semibold text-sm text-[var(--text)]">Hemant Singh</p>
+                  <p className="text-[10px] text-[var(--text-dim)] uppercase tracking-wider">
+                    Navigation
+                  </p>
+                </div>
+              </div>
+              <button
                 onClick={() => setNav(false)}
-                to={link} smooth duration={600} offset={-80}
-                className="block font-Outfit font-semibold py-3 px-4 rounded-xl cursor-pointer transition-all duration-200"
-                style={{ color: 'var(--text-dim)', fontSize: '1rem' }}
-                onMouseEnter={e => { e.currentTarget.style.color = 'var(--primary)'; e.currentTarget.style.background = 'var(--primary-08)'; }}
-                onMouseLeave={e => { e.currentTarget.style.color = 'var(--text-dim)'; e.currentTarget.style.background = 'transparent'; }}
+                className="p-2 rounded-lg text-[var(--text-dim)] hover:text-[var(--text)] hover:bg-[var(--border)] transition-all"
               >
-                {label}
-              </Link>
-            </li>
-          ))}
-        </ul>
+                <FaTimes size={16} />
+              </button>
+            </div>
 
-        {/* Bottom CTA area */}
-        <div style={{ padding: '1rem 1.25rem', borderTop: '1px solid var(--border)', display: 'flex', flexDirection: 'column', gap: 8 }}>
-          <a href="Hemant_Singh_Software_Engineer.pdf" target="_blank" rel="noopener noreferrer">
-            <button className="btn-primary" style={{ width: '100%' }}>
-              <span>Download Resume ↗</span>
-            </button>
-          </a>
-          <button
-            className="theme-toggle"
-            onClick={toggleTheme}
-            aria-label="Toggle theme"
-            style={{ width: '100%', justifyContent: 'center', gap: 8 }}
-          >
-            {theme === 'light' ? <HiOutlineMoon size={16} /> : <HiOutlineSun size={16} />}
-            <span className="font-Outfit text-sm font-semibold">
-              {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
-            </span>
-          </button>
-        </div>
-      </div>
+            {/* Nav links */}
+            <ul className="flex-1 p-4 space-y-1">
+              {links.map(({ id, link, label }, index) => (
+                <motion.li
+                  key={id}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.05 }}
+                >
+                  <Link
+                    onClick={() => setNav(false)}
+                    to={link}
+                    smooth
+                    duration={600}
+                    offset={-80}
+                    className="block font-medium py-3 px-4 rounded-xl cursor-pointer text-[var(--text-secondary)] hover:text-[var(--text)] hover:bg-[var(--border)] transition-all"
+                  >
+                    {label}
+                  </Link>
+                </motion.li>
+              ))}
+            </ul>
+
+            {/* Bottom CTA */}
+            <div className="p-4 border-t border-[var(--border)]">
+              <a
+                href="https://drive.google.com/file/d/1pBsanJxnOhWcr1JwT_u9RqGFBDU-c-dI/view"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="btn-primary w-full py-3">
+                  Download Resume
+                </button>
+              </a>
+              <a
+                href="mailto:hemantsingh14022000@gmail.com"
+                className="block mt-2"
+              >
+                <button className="btn-secondary w-full py-3">
+                  Get in Touch
+                </button>
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };
